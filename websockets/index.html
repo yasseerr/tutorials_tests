@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tutorials</title>
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script>
+        const socket = io("http://localhost:5000")
+            socket.on('connect', () => console.log("socket client connected"));
+
+            socket.on('event1', (data) => {
+                console.log("event one sent or emitted " + data)
+                socket.emit("message", { "sa7a": "ok" })
+            })
+            socket.emit('message', { 'salam': '3alaykoum' })
+    </script>
+</body>
+</html>
