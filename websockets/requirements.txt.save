@@ -1,0 +1,4 @@
+xflask
+flask-socketio
+eventlet
+gunicorn
